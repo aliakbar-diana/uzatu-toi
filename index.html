@@ -14,18 +14,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         
         html {
             height: 100%;
-            overflow: hidden;
         }
         
         body {
             position: relative;
             max-width: 640px;
             min-height: 100vh;
-            min-height: -webkit-fill-available;
             margin: 0 auto;
             color: #fff;
             font-family: MonumentaPro, Arial, sans-serif;
@@ -33,6 +32,7 @@
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
         body:before {
@@ -65,15 +65,12 @@
         .invitation-wrapper {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            min-height: -webkit-fill-available;
-            padding: 30px 25px;
+            padding: 25px 20px 30px;
             text-align: center;
             opacity: 0;
             animation: fadeIn 1.2s ease forwards;
-            gap: clamp(12px, 3vh, 18px);
+            gap: 15px;
         }
         
         @keyframes fadeIn {
@@ -94,19 +91,19 @@
         
         .bride-name {
             font-family: Shelley, Arial, sans-serif;
-            font-size: clamp(48px, 12vw, 68px);
+            font-size: 60px;
             color: #fff;
             line-height: 1;
-            margin-bottom: clamp(4px, 1vh, 6px);
+            margin-bottom: 5px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
             font-weight: 500;
         }
         
         .event-type {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(14px, 4vw, 18px);
+            font-size: 16px;
             color: #fff;
-            letter-spacing: clamp(2px, 1vw, 4px);
+            letter-spacing: 3px;
             text-transform: uppercase;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
@@ -116,12 +113,13 @@
             animation: fadeInScale 0.8s ease 0.4s backwards;
             background: linear-gradient(135deg, rgba(173, 152, 110, 0.25) 0%, rgba(193, 172, 130, 0.15) 100%);
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 2px solid rgba(173, 152, 110, 0.4);
-            border-radius: 25px;
-            padding: clamp(12px, 3vh, 15px) clamp(20px, 5vw, 30px);
+            border-radius: 20px;
+            padding: 12px 25px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 95%;
-            width: 100%;
+            max-width: 90%;
+            width: auto;
         }
         
         @keyframes fadeInScale {
@@ -133,16 +131,16 @@
         
         .guest-name-label {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(9px, 2.5vw, 10px);
+            font-size: 9px;
             color: rgba(255, 255, 255, 0.85);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: clamp(4px, 1vh, 6px);
+            margin-bottom: 5px;
         }
         
         .guest-name {
             font-family: Shelley, Arial, sans-serif;
-            font-size: clamp(26px, 7vw, 38px);
+            font-size: 32px;
             color: #fff;
             text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
             line-height: 1.3;
@@ -152,9 +150,8 @@
         
         /* ===== INVITATION TEXT ===== */
         .invitation-text {
-            max-width: min(480px, 90%);
+            max-width: 90%;
             animation: fadeInUp 0.8s ease 0.6s backwards;
-            padding: 0 10px;
         }
         
         @keyframes fadeInUp {
@@ -166,15 +163,15 @@
         
         .guest-greeting {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(12px, 3.5vw, 14px);
+            font-size: 13px;
             color: #fff;
-            margin-bottom: clamp(8px, 2vh, 12px);
+            margin-bottom: 10px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .invitation-message {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(11px, 3vw, 13px);
+            font-size: 12px;
             color: #fff;
             line-height: 1.6;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
@@ -184,9 +181,9 @@
         .event-details {
             display: flex;
             flex-direction: column;
-            gap: clamp(10px, 2.5vh, 15px);
-            width: 100%;
-            max-width: min(420px, 90%);
+            gap: 12px;
+            width: 90%;
+            max-width: 400px;
             animation: scaleIn 0.8s ease 0.8s backwards;
         }
         
@@ -200,9 +197,10 @@
         .detail-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: clamp(14px, 3vh, 20px) clamp(12px, 3vw, 18px);
+            border-radius: 18px;
+            padding: 16px 14px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
@@ -211,8 +209,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: clamp(20px, 5vw, 30px);
-            flex-wrap: wrap;
+            gap: 25px;
         }
         
         .datetime-section {
@@ -222,7 +219,7 @@
         
         .datetime-divider {
             width: 2px;
-            height: clamp(50px, 10vh, 60px);
+            height: 55px;
             background: linear-gradient(to bottom, 
                 rgba(255, 255, 255, 0.1) 0%, 
                 rgba(255, 255, 255, 0.4) 50%, 
@@ -231,16 +228,16 @@
         
         .detail-label {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(10px, 2.8vw, 12px);
+            font-size: 11px;
             color: rgba(255, 255, 255, 0.85);
             text-transform: lowercase;
-            margin-bottom: clamp(6px, 1.5vh, 10px);
+            margin-bottom: 8px;
             letter-spacing: 1px;
         }
         
         .detail-value {
             font-family: Shelley, Arial, sans-serif;
-            font-size: clamp(32px, 8vw, 40px);
+            font-size: 36px;
             color: #fff;
             line-height: 1.1;
             text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
@@ -248,13 +245,13 @@
         
         .detail-value.time {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(26px, 6.5vw, 32px);
+            font-size: 30px;
             font-weight: 300;
         }
         
         .detail-value.address {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(11px, 3vw, 13px);
+            font-size: 12px;
             line-height: 1.6;
             font-weight: 400;
         }
@@ -266,15 +263,15 @@
         
         .hosts-label {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(11px, 3vw, 12px);
+            font-size: 11px;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: clamp(6px, 1.5vh, 8px);
+            margin-bottom: 7px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .hosts-names {
             font-family: Shelley, Arial, sans-serif;
-            font-size: clamp(26px, 7vw, 32px);
+            font-size: 30px;
             color: #fff;
             text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
         }
@@ -286,9 +283,9 @@
             justify-content: center;
             gap: 8px;
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(11px, 3vw, 12px);
-            padding: clamp(10px, 2.5vh, 12px) clamp(16px, 4vw, 20px);
-            margin-top: clamp(6px, 1.5vh, 10px);
+            font-size: 11px;
+            padding: 11px 18px;
+            margin-top: 8px;
             background: linear-gradient(135deg, #ad986e 0%, #c9b388 100%);
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -297,6 +294,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(173, 152, 110, 0.3);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .gis-button:hover {
@@ -311,29 +309,29 @@
         
         .gis-button svg {
             flex-shrink: 0;
-            width: clamp(14px, 4vw, 18px);
-            height: clamp(14px, 4vw, 18px);
+            width: 16px;
+            height: 16px;
         }
         
         /* ===== RSVP BUTTONS ===== */
         .rsvp-section {
-            width: 100%;
-            max-width: min(420px, 90%);
+            width: 90%;
+            max-width: 400px;
             animation: fadeInUp 0.8s ease 1.2s backwards;
         }
         
         .rsvp-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 12px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
         }
         
         .rsvp-btn {
             position: relative;
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(12px, 3.2vw, 13px);
-            padding: clamp(12px, 2.5vh, 14px) clamp(18px, 4vw, 22px);
+            font-size: 12px;
+            padding: 13px 20px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -383,6 +381,7 @@
             color: #fff;
             border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .btn-decline:hover {
@@ -417,6 +416,7 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             z-index: 1000;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -432,16 +432,17 @@
         .modal-content {
             background: linear-gradient(135deg, rgba(173, 152, 110, 0.95) 0%, rgba(193, 172, 130, 0.95) 100%);
             border-radius: 25px;
-            padding: clamp(30px, 6vh, 40px) clamp(20px, 5vw, 30px);
+            padding: 35px 25px;
             text-align: center;
-            max-width: min(320px, 85%);
-            width: 90%;
+            max-width: 85%;
+            width: 300px;
             transform: scale(0.9);
             opacity: 0;
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
         
         .modal-overlay.active .modal-content {
@@ -455,24 +456,24 @@
         }
         
         .modal-icon {
-            font-size: clamp(40px, 10vw, 48px);
-            margin-bottom: clamp(15px, 3vh, 20px);
+            font-size: 44px;
+            margin-bottom: 18px;
             display: block;
         }
         
         .modal-message {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(14px, 3.5vw, 16px);
+            font-size: 15px;
             color: #fff;
             line-height: 1.5;
-            margin-bottom: clamp(20px, 4vh, 25px);
+            margin-bottom: 22px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .modal-close {
             font-family: MonumentaPro, Arial, sans-serif;
-            font-size: clamp(12px, 3.2vw, 14px);
-            padding: clamp(10px, 2vh, 12px) clamp(25px, 6vw, 30px);
+            font-size: 13px;
+            padding: 11px 28px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
             color: #fff;
             border: 2px solid rgba(255, 255, 255, 0.5);
@@ -480,6 +481,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .modal-close:hover {
@@ -488,82 +490,42 @@
             transform: translateY(-2px);
         }
         
-        /* ===== LANDSCAPE MODE ===== */
-        @media (orientation: landscape) and (max-height: 500px) {
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        
+        /* Small phones */
+        @media (max-width: 360px) {
             .invitation-wrapper {
-                padding: 20px 15px;
-                gap: 8px;
-                min-height: auto;
+                padding: 20px 15px 25px;
+                gap: 12px;
             }
             
             .bride-name {
-                font-size: clamp(36px, 8vh, 48px);
-                margin-bottom: 3px;
+                font-size: 52px;
             }
             
             .event-type {
-                font-size: clamp(12px, 3vh, 14px);
-            }
-            
-            .guest-name-section {
-                padding: 8px 20px;
+                font-size: 14px;
+                letter-spacing: 2px;
             }
             
             .guest-name {
-                font-size: clamp(22px, 5vh, 28px);
-            }
-            
-            .invitation-text {
-                margin: 5px 0;
+                font-size: 28px;
             }
             
             .guest-greeting {
-                font-size: clamp(10px, 2.5vh, 12px);
-                margin-bottom: 5px;
+                font-size: 12px;
             }
             
             .invitation-message {
-                font-size: clamp(10px, 2.5vh, 11px);
-                line-height: 1.4;
+                font-size: 11px;
             }
             
             .event-details {
-                gap: 8px;
+                gap: 10px;
             }
             
             .detail-card {
-                padding: 10px 12px;
-            }
-            
-            .datetime-card {
-                gap: 15px;
-            }
-            
-            .datetime-divider {
-                height: 40px;
-            }
-            
-            .detail-value {
-                font-size: clamp(24px, 6vh, 32px);
-            }
-            
-            .detail-value.time {
-                font-size: clamp(20px, 5vh, 26px);
-            }
-            
-            .hosts-names {
-                font-size: clamp(20px, 5vh, 26px);
-            }
-            
-            .rsvp-buttons {
-                gap: 8px;
-            }
-        }
-        
-        /* ===== EXTRA SMALL SCREENS ===== */
-        @media (max-width: 360px) {
-            .invitation-wrapper {
-                padding: 20px 15px;
+                padding: 14px 12px;
             }
             
             .datetime-card {
@@ -580,29 +542,393 @@
                     rgba(255, 255, 255, 0.1) 100%);
             }
             
-            .rsvp-buttons {
-                grid-template-columns: 1fr;
-                gap: 10px;
+            .detail-value {
+                font-size: 32px;
             }
             
-            .invitation-message br {
-                display: none;
+            .detail-value.time {
+                font-size: 26px;
+            }
+            
+            .hosts-names {
+                font-size: 26px;
+            }
+            
+            .rsvp-buttons {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
         }
         
-        /* ===== VERY SHORT SCREENS ===== */
-        @media (max-height: 600px) {
+        /* Very small phones */
+        @media (max-width: 320px) {
             .invitation-wrapper {
-                padding: 15px 20px;
+                padding: 18px 12px 22px;
+                gap: 10px;
+            }
+            
+            .bride-name {
+                font-size: 48px;
+            }
+            
+            .event-type {
+                font-size: 13px;
+            }
+            
+            .guest-name-section {
+                padding: 10px 20px;
+            }
+            
+            .guest-name {
+                font-size: 26px;
+            }
+            
+            .detail-value {
+                font-size: 30px;
+            }
+            
+            .detail-value.time {
+                font-size: 24px;
+            }
+            
+            .detail-value.address {
+                font-size: 11px;
+            }
+        }
+        
+        /* Short screens */
+        @media (max-height: 700px) {
+            .invitation-wrapper {
+                padding: 20px 20px 25px;
+                gap: 10px;
+            }
+            
+            .bride-name {
+                font-size: 54px;
+                margin-bottom: 4px;
+            }
+            
+            .event-type {
+                font-size: 15px;
+            }
+            
+            .guest-name-section {
+                padding: 10px 22px;
+            }
+            
+            .guest-name {
+                font-size: 30px;
+            }
+            
+            .guest-greeting {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+            
+            .invitation-message {
+                font-size: 11px;
+            }
+            
+            .event-details {
+                gap: 10px;
+            }
+            
+            .detail-card {
+                padding: 14px 12px;
+            }
+            
+            .datetime-divider {
+                height: 50px;
+            }
+            
+            .detail-value {
+                font-size: 34px;
+            }
+            
+            .detail-value.time {
+                font-size: 28px;
+            }
+            
+            .hosts-names {
+                font-size: 28px;
+            }
+        }
+        
+        /* Very short screens */
+        @media (max-height: 640px) {
+            .invitation-wrapper {
+                padding: 15px 20px 20px;
                 gap: 8px;
             }
             
             .bride-name {
-                font-size: clamp(40px, 10vw, 52px);
+                font-size: 50px;
+            }
+            
+            .event-type {
+                font-size: 14px;
             }
             
             .guest-name {
-                font-size: clamp(24px, 6vw, 30px);
+                font-size: 28px;
+            }
+            
+            .detail-value {
+                font-size: 32px;
+            }
+            
+            .detail-value.time {
+                font-size: 26px;
+            }
+            
+            .hosts-names {
+                font-size: 26px;
+            }
+        }
+        
+        /* Extra short screens */
+        @media (max-height: 600px) {
+            .invitation-wrapper {
+                padding: 12px 18px 18px;
+                gap: 7px;
+            }
+            
+            .bride-name {
+                font-size: 46px;
+            }
+            
+            .guest-name {
+                font-size: 26px;
+            }
+            
+            .datetime-card {
+                gap: 20px;
+            }
+            
+            .datetime-divider {
+                height: 45px;
+            }
+            
+            .detail-value {
+                font-size: 30px;
+            }
+            
+            .detail-value.time {
+                font-size: 24px;
+            }
+        }
+        
+        /* Landscape mode */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .invitation-wrapper {
+                padding: 15px 20px 20px;
+                gap: 8px;
+            }
+            
+            .bride-name {
+                font-size: 42px;
+                margin-bottom: 3px;
+            }
+            
+            .event-type {
+                font-size: 13px;
+            }
+            
+            .guest-name-section {
+                padding: 8px 20px;
+            }
+            
+            .guest-name {
+                font-size: 24px;
+            }
+            
+            .guest-greeting {
+                font-size: 11px;
+                margin-bottom: 6px;
+            }
+            
+            .invitation-message {
+                font-size: 10px;
+            }
+            
+            .event-details {
+                gap: 8px;
+            }
+            
+            .detail-card {
+                padding: 12px 10px;
+            }
+            
+            .datetime-card {
+                gap: 18px;
+            }
+            
+            .datetime-divider {
+                height: 40px;
+            }
+            
+            .detail-label {
+                font-size: 10px;
+                margin-bottom: 6px;
+            }
+            
+            .detail-value {
+                font-size: 28px;
+            }
+            
+            .detail-value.time {
+                font-size: 24px;
+            }
+            
+            .detail-value.address {
+                font-size: 11px;
+            }
+            
+            .hosts-label {
+                font-size: 10px;
+                margin-bottom: 5px;
+            }
+            
+            .hosts-names {
+                font-size: 24px;
+            }
+            
+            .gis-button {
+                font-size: 10px;
+                padding: 9px 16px;
+                margin-top: 6px;
+            }
+            
+            .gis-button svg {
+                width: 14px;
+                height: 14px;
+            }
+            
+            .rsvp-btn {
+                font-size: 11px;
+                padding: 11px 18px;
+            }
+        }
+        
+        /* Tablets and larger */
+        @media (min-width: 641px) {
+            .invitation-wrapper {
+                padding: 35px 25px 40px;
+                gap: 20px;
+            }
+            
+            .bride-name {
+                font-size: 68px;
+                margin-bottom: 6px;
+            }
+            
+            .event-type {
+                font-size: 18px;
+                letter-spacing: 4px;
+            }
+            
+            .guest-name-section {
+                padding: 14px 28px;
+            }
+            
+            .guest-name-label {
+                font-size: 10px;
+                margin-bottom: 6px;
+            }
+            
+            .guest-name {
+                font-size: 36px;
+            }
+            
+            .guest-greeting {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .invitation-message {
+                font-size: 13px;
+            }
+            
+            .event-details {
+                gap: 14px;
+            }
+            
+            .detail-card {
+                padding: 18px 16px;
+            }
+            
+            .datetime-card {
+                gap: 28px;
+            }
+            
+            .datetime-divider {
+                height: 60px;
+            }
+            
+            .detail-label {
+                font-size: 12px;
+                margin-bottom: 9px;
+            }
+            
+            .detail-value {
+                font-size: 38px;
+            }
+            
+            .detail-value.time {
+                font-size: 32px;
+            }
+            
+            .detail-value.address {
+                font-size: 13px;
+            }
+            
+            .hosts-label {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+            
+            .hosts-names {
+                font-size: 32px;
+            }
+            
+            .gis-button {
+                font-size: 12px;
+                padding: 12px 20px;
+                margin-top: 10px;
+            }
+            
+            .gis-button svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .rsvp-buttons {
+                gap: 12px;
+            }
+            
+            .rsvp-btn {
+                font-size: 13px;
+                padding: 14px 22px;
+            }
+            
+            .modal-content {
+                padding: 40px 30px;
+                width: 320px;
+            }
+            
+            .modal-icon {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+            
+            .modal-message {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+            
+            .modal-close {
+                font-size: 14px;
+                padding: 12px 30px;
             }
         }
         
@@ -703,16 +1029,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Фикс для iOS viewport height
-    const setVH = () => {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
-    
-    setVH();
-    window.addEventListener('resize', setVH);
-    window.addEventListener('orientationchange', setVH);
-    
     // Получаем имя гостя из URL параметра
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('guest');
@@ -741,8 +1057,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         modalOverlay.classList.add('active');
-        
-        // Блокируем скролл body при открытом модальном окне
         document.body.style.overflow = 'hidden';
     }
     
