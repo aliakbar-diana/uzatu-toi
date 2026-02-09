@@ -2,7 +2,7 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Персональное приглашение | Диана қыз ұзату</title>
     
     <!-- Bootstrap CSS -->
@@ -17,51 +17,39 @@
             -webkit-tap-highlight-color: transparent;
         }
         
-        html, body {
+        html {
             height: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            position: fixed;
+            width: 100%;
         }
         
         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
             font-family: MonumentaPro, Arial, sans-serif;
             color: #fff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
             position: relative;
         }
         
-        /* Fixed background container */
-        .fixed-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -2;
-            background: url('1.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            width: 100%;
-            height: 100%;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        .fixed-overlay {
-            position: fixed;
+        body::before {
+            content: "";
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.35);
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
+            pointer-events: none;
         }
         
         .invitation-container {
@@ -529,10 +517,6 @@
 </head>
 <body>
 
-<!-- Fixed Background -->
-<div class="fixed-background"></div>
-<div class="fixed-overlay"></div>
-
 <div class="invitation-container">
     <div class="container">
         <div class="content-wrapper">
@@ -547,7 +531,7 @@
             <div class="text-center mb-3">
                 <div class="guest-card">
                     <div class="guest-label">Шақырылады</div>
-                    <div class="guest-name" id="guestName">Еркин Галя Ерсин Айнур Айгерим</div>
+                    <div class="guest-name" id="guestName">Еркин Галя Ерсин Айнур Айгери</div>
                 </div>
             </div>
             
@@ -647,6 +631,17 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevent zoom on mobile
+    document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('touchmove', function(e) {
+        if (e.scale !== 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
     // Get guest name from URL
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('guest');
