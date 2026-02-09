@@ -51,7 +51,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.15);
             z-index: -1;
         }
         
@@ -534,7 +534,7 @@
             <div class="text-center mb-3">
                 <div class="guest-card">
                     <div class="guest-label">Шақырылады</div>
-                    <div class="guest-name" id="guestName">Еркин Галя Ерсин Айнур Айгерим</div>
+                    <div class="guest-name" id="guestName">Еркин<br>Галя<br>Ерсин<br>Айнур<br>Айгерим</div>
                 </div>
             </div>
             
@@ -639,7 +639,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const guestParam = urlParams.get('guest');
     
     if (guestParam) {
-        document.getElementById('guestName').textContent = decodeURIComponent(guestParam);
+        // Split by spaces and join with <br> tags
+        const names = decodeURIComponent(guestParam).split(' ');
+        document.getElementById('guestName').innerHTML = names.join('<br>');
     }
     
     const btnAccept = document.getElementById('btnAccept');
