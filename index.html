@@ -2,7 +2,7 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Персональное приглашение | Диана қыз ұзату</title>
     
     <!-- Bootstrap CSS -->
@@ -17,39 +17,42 @@
             -webkit-tap-highlight-color: transparent;
         }
         
-        html {
+        html, body {
             height: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            position: fixed;
-            width: 100%;
         }
         
         body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
             font-family: MonumentaPro, Arial, sans-serif;
             color: #fff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background: url('1.jpg') no-repeat center center fixed;
-            background-size: cover;
             position: relative;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('1.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -2;
         }
         
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.35);
-            pointer-events: none;
+            z-index: -1;
         }
         
         .invitation-container {
@@ -531,7 +534,7 @@
             <div class="text-center mb-3">
                 <div class="guest-card">
                     <div class="guest-label">Шақырылады</div>
-                    <div class="guest-name" id="guestName">Еркин Галя Ерсин Айнур Айгери</div>
+                    <div class="guest-name" id="guestName">Еркин Галя Ерсин Айнур Айгерим</div>
                 </div>
             </div>
             
@@ -631,17 +634,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Prevent zoom on mobile
-    document.addEventListener('gesturestart', function(e) {
-        e.preventDefault();
-    });
-    
-    document.addEventListener('touchmove', function(e) {
-        if (e.scale !== 1) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-    
     // Get guest name from URL
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('guest');
