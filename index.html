@@ -30,8 +30,18 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             position: relative;
-            background: url('1.jpg') no-repeat center center fixed;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('1.jpg') no-repeat center center;
             background-size: cover;
+            z-index: -2;
         }
         
         body::before {
@@ -42,7 +52,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.35);
-            z-index: 0;
+            z-index: -1;
         }
         
         .invitation-container {
@@ -712,4 +722,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 </body>
-</html
+</html>
